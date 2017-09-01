@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Watson\Active\ActiveServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -182,6 +183,8 @@ return [
         //Modules
             //Access
         App\Domains\Access\Providers\AccessServiceProvider::class,
+            //Admin
+        App\Domains\Dashboard\Providers\AdminServiceProvider::class,
             //Frontend
         App\Domains\Frontend\Providers\FrontendServiceProvider::class,
 
@@ -234,6 +237,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+        'Active' => Watson\Active\Facades\Active::class,
 
     ],
 

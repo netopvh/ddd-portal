@@ -16,6 +16,7 @@ return [
     'paths' => [
         resource_path('views'),
         realpath(app_path('Domains/Access/Views')),
+        realpath(app_path('Domains/Dashboard/Views')),
         realpath(app_path('Domains/Frontend/Views'))
     ],
 

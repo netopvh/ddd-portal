@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Frontend\Providers;
+namespace App\Domains\Dashboard\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
+class AdminServiceProvider extends ServiceProvider
 {
     /**
      * This namespace is applied to your controller routes.
