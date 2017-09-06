@@ -14,6 +14,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('fiero.home');
+        return view('themes.layout.master');
     }
 }
