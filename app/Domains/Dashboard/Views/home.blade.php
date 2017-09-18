@@ -1,12 +1,7 @@
 @extends('layout.backend.app')
 
 @section('breadcrumb')
-    <div class="breadcrumb-line">
-        <ul class="breadcrumb">
-            <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ul>
-    </div>
+    {{ Breadcrumbs::render('admin.home') }}
 @stop
 
 @section('content')

@@ -170,6 +170,7 @@ return [
         Laratrust\LaratrustServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Watson\Active\ActiveServiceProvider::class,
+        OwenIt\Auditing\AuditingServiceProvider::class,
 
         /*
          * Application Service Providers...

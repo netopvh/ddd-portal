@@ -6,7 +6,7 @@
         <div class="sidebar-user-material">
             <div class="category-content">
                 <div class="sidebar-user-material-content">
-                    <a href="#"><img src="backend/images/placeholder.jpg" class="img-circle img-responsive" alt=""></a>
+                    <a href="#"><img src="{{ asset('backend/images/placeholder.jpg') }}" class="img-circle img-responsive" alt=""></a>
                     <h6>Angelo Neto</h6>
                     <span class="text-size-small">INFORMÁTICA</span>
                 </div>
@@ -36,7 +36,7 @@
 
                     <!-- Gerenciamento -->
                     <li class="navigation-header"><span>Gerenciamento</span> <i class="icon-menu" title="Gerenciamento"></i></li>
-                    <li class="active"><a href=""><i class="icon-home4"></i> <span>Início</span></a></li>
+                    <li class="{{ active('dashboard') }}"><a href="{{ route('admin.home') }}"><i class="icon-home4"></i> <span>Início</span></a></li>
                     <li>
                         <a href="#"><i class="icon-stack"></i> <span>Starter kit</span></a>
                         <ul>
@@ -53,9 +53,9 @@
                     <li>
                         <a href="#"><i class="icon-stack"></i> <span>Gerenciamento de Acesso</span></a>
                         <ul>
-                            <li><a href=""><i class="icon-user"></i> Usuários</a></li>
-                            <li><a href=""><i class="icon-users4"></i> Perfil de Acesso</a></li>
-                            <li><a href=""><i class="icon-unlocked"></i> Permissões</a></li>
+                            <li class="{{ active(['admin.users','admin.users.*']) }}"><a href="{{ route('admin.users') }}"><i class="icon-user"></i> Usuários</a></li>
+                            <li class="{{ active(['admin.roles','admin.roles.*']) }}"><a href="{{ route('admin.roles') }}"><i class="icon-users4"></i> Perfil de Acesso</a></li>
+                            <li class="{{ active(['admin.permissions','admin.permissions.*']) }}"><a href="{{ route('admin.permissions') }}"><i class="icon-unlocked"></i> Permissões</a></li>
                         </ul>
                     </li>
                     <li><a href=""><i class="icon-cog"></i> Parâmetros do Sistema</a></li>

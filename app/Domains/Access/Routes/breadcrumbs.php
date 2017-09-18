@@ -1,7 +1,26 @@
 <?php
+
+
 /**
- * Created by PhpStorm.
- * User: angelo.neto
- * Date: 26/07/2017
- * Time: 15:06
+ * Usuários
  */
+Breadcrumbs::register('admin.users', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+    $breadcrumbs->push('Usuários', route('admin.users'));
+});
+
+/**
+ * Roles
+ */
+Breadcrumbs::register('admin.roles', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+    $breadcrumbs->push('Perfis de Acesso', route('admin.roles'));
+});
+
+/**
+ * Permissions
+ */
+Breadcrumbs::register('admin.permissions', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.home');
+    $breadcrumbs->push('Permissões', route('admin.permissions'));
+});

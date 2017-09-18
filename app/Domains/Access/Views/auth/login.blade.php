@@ -1,123 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Acesso á Area Administrativa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="{{asset('backend/img/logo1.ico')}}"/>
-    <!--Global styles -->
-    <link type="text/css" rel="stylesheet" href="{{asset('backend/css/components.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('backend/css/custom.css')}}"/>
-    <!--End of Global styles -->
-    <!--Plugin styles-->
-    <link type="text/css" rel="stylesheet"
-          href="{{asset('backend/vendors/bootstrapvalidator/css/bootstrapValidator.min.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('backend/vendors/wow/css/animate.css')}}"/>
-    <!--End of Plugin styles-->
-    <link type="text/css" rel="stylesheet" href="{{asset('backend/css/pages/login1.css')}}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title','Acesso ao Sistema')</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">
+    <link href="{{ asset('backend/css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/core.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/components.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/colors.css') }}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/loaders/pace.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/core/libraries/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/core/libraries/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/loaders/blockui.min.js') }}"></script>
+    <!-- /core JS files -->
+
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{{ asset('backend/js/core/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/ui/ripple.min.js') }}"></script>
+    <!-- /theme JS files -->
+
 </head>
-<body>
-<div class="preloader" style=" position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100000;
-  backface-visibility: hidden;
-  background: #ffffff;">
-    <div class="preloader_img" style="width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 48%;
-  top: 48%;
-  background-position: center;
-z-index: 999999">
-        <img src="{{asset('backend/img/loader.gif')}}" style=" width: 40px;" alt="loading...">
+
+<body class="login-container">
+
+<!-- Main navbar -->
+<div class="navbar navbar-inverse bg-indigo">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{ route('admin.home') }}"><img src="{{ asset('backend/images/logo.png') }}"
+                                                                      alt=""></a>
+
+        <ul class="nav navbar-nav pull-right visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+        </ul>
     </div>
+
 </div>
-<div class="container wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="2s">
-    <div class="row">
-        <div class="col-lg-8 push-lg-2 col-md-10 push-md-1 col-sm-10 push-sm-1 login_top_bottom">
-            <div class="row">
-                <div class="col-lg-8 push-lg-2 col-md-10 push-md-1 col-sm-12">
-                    <div class="login_logo login_border_radius1">
-                        <h3 class="text-center" style="padding-top: 20px">
-                            <span class="text-white">Área Administrativa</span>
-                        </h3>
-                    </div>
-                    <div class="bg-white login_content login_border_radius">
-                        <form id="login_validator" method="POST" action="{{ route('login') }}" class="login_validator">
-                            {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="form-control-label"> Usuário</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon input_email"><i
-                                                class="fa fa-envelope text-primary"></i></span>
-                                    <input type="text" class="form-control  form-control-md" name="username"
-                                           placeholder="Usuário" value="{{ old('username') }}">
-                                </div>
-                                @if ($errors->has('username'))
-                                    <small class="help-block">
-                                        {{ $errors->first('username') }}
-                                    </small>
-                                @endif
+<!-- /main navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+
+                <!-- Simple login form -->
+                <form action="{{ route('login') }}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="panel panel-body login-form">
+                        <div class="text-center">
+                            <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+                            <h5 class="content-group">Acesso ao Sistema
+                                <small class="display-block">Entre com sua credenciais</small>
+                            </h5>
+                        </div>
+
+                        <div class="form-group has-feedback has-feedback-left{{ $erros->has('username')? '':' has-error' }}">
+                            <input type="text" class="form-control" name="username" placeholder="Usuário"
+                                   value="{{ old('username') }}" required autofocus>
+                            <div class="form-control-feedback">
+                                <i class="icon-user text-muted"></i>
                             </div>
-                            <!--</h3>-->
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="form-control-label">Senha</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon addon_password"><i
-                                                class="fa fa-lock text-primary"></i></span>
-                                    <input type="password" class="form-control form-control-md"
-                                           name="password" placeholder="Senha">
-                                </div>
-                                @if ($errors->has('password'))
-                                    <small class="help-block">
-                                        {{ $errors->first('password') }}
-                                    </small>
-                                @endif
+                            @if ($errors->has('username'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group has-feedback has-feedback-left{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <input type="password" name="password" class="form-control" placeholder="Senha">
+                            <div class="form-control-feedback">
+                                <i class="icon-lock2 text-muted"></i>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <button type="submit" class="btn btn-primary btn-block login_button">Acessar
-                                            Sistema
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input form-control">
-                                        <span class="custom-control-indicator"></span>
-                                        <a class="custom-control-description">Mantenha me Conectado</a>
-                                    </label>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <a href="">Esqueceu a Senha?</a>
-                                </div>
-                            </div>
+                            <button type="submit" class="btn bg-pink-400 btn-block">Acessar <i
+                                        class="icon-circle-right2 position-right"></i></button>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="login_password_recover.html">Esqueceu a Senha?</a>
                         </div>
                     </div>
+                </form>
+                <!-- /simple login form -->
+
+
+                <!-- Footer -->
+                <div class="footer text-muted text-center">
+                    &copy; 2017. <a href="#">Sistema de Gestão</a> by <a href="http://themeforest.net/user/Kopyov"
+                                                                         target="_blank">Angelo Neto</a>
                 </div>
+                <!-- /footer -->
+
             </div>
+            <!-- /content area -->
+
         </div>
+        <!-- /main content -->
+
     </div>
+    <!-- /page content -->
+
 </div>
-<!-- global js -->
-<script type="text/javascript" src="{{asset('backend/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('backend/js/tether.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('backend/js/bootstrap.min.js')}}"></script>
-<!-- end of global js-->
-<!--Plugin js-->
-<script type="text/javascript"
-        src="{{asset('backend/vendors/bootstrapvalidator/js/bootstrapValidator.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('backend/vendors/wow/js/wow.min.js')}}"></script>
-<!--End of plugin js-->
-<script type="text/javascript" src="{{asset('backend/modules/login.js')}}"></script>
+<!-- /page container -->
+
 </body>
-
 </html>
-

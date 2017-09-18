@@ -2,6 +2,14 @@
 
 namespace App\Domains\Access\Providers;
 
+use App\Domains\Access\Repositories\Contracts\PermissionGroupRepository;
+use App\Domains\Access\Repositories\Contracts\PermissionRepository;
+use App\Domains\Access\Repositories\Contracts\RoleRepository;
+use App\Domains\Access\Repositories\Contracts\UserRepository;
+use App\Domains\Access\Repositories\PermissionGroupRepositoryEloquent;
+use App\Domains\Access\Repositories\PermissionRepositoryEloquent;
+use App\Domains\Access\Repositories\RoleRepositoryEloquent;
+use App\Domains\Access\Repositories\UserRepositoryEloquent;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -26,6 +34,18 @@ class AccessServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+    }
+
+    /**
+     * Register all repositories for this module
+     *
+     */
+    public function register()
+    {
+        $this->app->bind(UserRepository::class,UserRepositoryEloquent::class);
+        $this->app->bind(RoleRepository::class, RoleRepositoryEloquent::class);
+        $this->app->bind(PermissionRepository::class, PermissionRepositoryEloquent::class);
+        $this->app->bind(PermissionGroupRepository::class, PermissionGroupRepositoryEloquent::class);
     }
 
     /**

@@ -8,32 +8,14 @@
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-    <link href="backend/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-    <link href="backend/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="backend/css/core.css" rel="stylesheet" type="text/css">
-    <link href="backend/css/components.css" rel="stylesheet" type="text/css">
-    <link href="backend/css/colors.css" rel="stylesheet" type="text/css">
-    <link href="backend/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/core.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/components.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/colors.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/custom.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 
-    <!-- Core JS files -->
-    <script type="text/javascript" src="backend/js/plugins/loaders/pace.min.js"></script>
-    <script type="text/javascript" src="backend/js/core/libraries/jquery.min.js"></script>
-    <script type="text/javascript" src="backend/js/core/libraries/bootstrap.min.js"></script>
-    <script type="text/javascript" src="backend/js/plugins/loaders/blockui.min.js"></script>
-    <!-- /core JS files -->
-
-    <!-- Theme JS files -->
-    <script type="text/javascript" src="backend/js/plugins/visualization/d3/d3.min.js"></script>
-    <script type="text/javascript" src="backend/js/plugins/visualization/d3/d3_tooltip.js"></script>
-    <script type="text/javascript" src="backend/js/plugins/forms/styling/uniform.min.js"></script>
-    <script type="text/javascript" src="backend/js/plugins/ui/moment/moment.min.js"></script>
-    <script type="text/javascript" src="backend/js/plugins/ui/nicescroll.min.js"></script>
-
-    <script type="text/javascript" src="backend/js/core/app.js"></script>
-    <script type="text/javascript" src="backend/js/pages/layout_fixed_custom.js"></script>
-    <script type="text/javascript" src="backend/js/plugins/ui/ripple.min.js"></script>
-    <!-- /theme JS files -->
 
 </head>
 
@@ -92,5 +74,23 @@
 </div>
 <!-- /page container -->
 
+<!-- Core JS files -->
+<script type="text/javascript" src="{{ asset('backend/js/plugins/loaders/pace.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/core/libraries/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/core/libraries/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/plugins/loaders/blockui.min.js') }}"></script>
+<!-- /core JS files -->
+
+<!-- Theme JS files -->
+<script type="text/javascript" src="{{ asset('backend/js/plugins/forms/styling/uniform.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/plugins/ui/moment/moment.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/plugins/ui/nicescroll.min.js') }}"></script>
+@stack('scripts-before')
+
+<script type="text/javascript" src="{{ asset('backend/js/core/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/pages/layout_fixed_custom.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/plugins/ui/ripple.min.js') }}"></script>
+@stack('scripts-after')
+<!-- /theme JS files -->
 </body>
 </html>

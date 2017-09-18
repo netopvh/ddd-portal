@@ -1,3 +1,3 @@
 <?php
 
-$this->get('/admin', 'HomeController@index')->name('admin.home');
+$this->get('/dashboard', 'HomeController@index')->name('admin.home');

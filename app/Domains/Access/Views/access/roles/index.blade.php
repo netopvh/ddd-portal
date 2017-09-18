@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Neto
- * Date: 07/09/2017
- * Time: 10:10
- */
+@extends('layout.backend.app')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render('admin.roles') }}
+@stop
+
+@section('content')
+    asdsa
+@stop
