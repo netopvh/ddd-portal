@@ -34,28 +34,33 @@
             <div class="category-content no-padding">
                 <ul class="navigation navigation-main navigation-accordion">
 
-                    <!-- Main -->
-                    <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-                    <li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                    <!-- Gerenciamento -->
+                    <li class="navigation-header"><span>Gerenciamento</span> <i class="icon-menu" title="Gerenciamento"></i></li>
+                    <li class="active"><a href=""><i class="icon-home4"></i> <span>Início</span></a></li>
                     <li>
                         <a href="#"><i class="icon-stack"></i> <span>Starter kit</span></a>
                         <ul>
-                            <li><a href="starters/horizontal_nav.html">Horizontal navigation</a></li>
-                            <li>
-                                <a href="#">Detached layout</a>
-                                <ul>
-                                    <li><a href="starters/detached_left.html">Left sidebar</a></li>
-                                    <li><a href="starters/detached_sticky.html">Sticky sidebar</a></li>
-                                </ul>
-                            </li>
                             <li><a href="starters/layout_boxed.html">Boxed layout</a></li>
                             <li class="navigation-divider"></li>
                             <li><a href="starters/layout_navbar_fixed_main.html">Fixed main navbar</a></li>
 
                         </ul>
                     </li>
-                    <li><a href="changelog.html"><i class="icon-list-unordered"></i> <span>Changelog <span class="label bg-blue-400">1.6</span></span></a></li>
-                    <!-- /main -->
+                    <!-- /gerenciamento -->
+
+                    <!-- Administração -->
+                    <li class="navigation-header"><span>Administração</span> <i class="icon-menu" title="Gerenciamento"></i></li>
+                    <li>
+                        <a href="#"><i class="icon-stack"></i> <span>Gerenciamento de Acesso</span></a>
+                        <ul>
+                            <li><a href=""><i class="icon-user"></i> Usuários</a></li>
+                            <li><a href=""><i class="icon-users4"></i> Perfil de Acesso</a></li>
+                            <li><a href=""><i class="icon-unlocked"></i> Permissões</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><i class="icon-cog"></i> Parâmetros do Sistema</a></li>
+                    <li><a href=""><i class="icon-stack-star"></i> Auditoria e Logs</a></li>
+                    <!-- /administracao -->
                 </ul>
             </div>
         </div>
