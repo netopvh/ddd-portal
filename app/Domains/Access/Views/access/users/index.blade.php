@@ -64,9 +64,9 @@
                                 <td>{{ $user->name }}</td>
                                 <td>Kopyov</td>
                                 <td>
-                                    @if($user->status == 'A')
+                                    @if($user->status)
                                         <span class="label label-success">Ativo</span>
-                                    @elseif($user->status == 'I')
+                                    @else
                                         <span class="label label-danger">Inativo</span>
                                     @endif
                                 </td>

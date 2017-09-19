@@ -71,7 +71,7 @@
                             </h5>
                         </div>
 
-                        <div class="form-group has-feedback has-feedback-left{{ $erros->has('username')? '':' has-error' }}">
+                        <div class="form-group has-feedback has-feedback-left">
                             <input type="text" class="form-control" name="username" placeholder="Usuário"
                                    value="{{ old('username') }}" required autofocus>
                             <div class="form-control-feedback">
@@ -84,7 +84,7 @@
                             @endif
                         </div>
 
-                        <div class="form-group has-feedback has-feedback-left{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group has-feedback has-feedback-left">
                             <input type="password" name="password" class="form-control" placeholder="Senha">
                             <div class="form-control-feedback">
                                 <i class="icon-lock2 text-muted"></i>
