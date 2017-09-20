@@ -25,7 +25,7 @@
 
 
     <!-- Theme JS files -->
-    <script type="text/javascript" src="{{ asset('backend/js/core/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/core/core.js') }}"></script>
     <script type="text/javascript" src="{{ asset('backend/js/plugins/ui/ripple.min.js') }}"></script>
     <!-- /theme JS files -->
 
@@ -78,7 +78,7 @@
                                 <i class="icon-user text-muted"></i>
                             </div>
                             @if ($errors->has('username'))
-                                <span class="help-block">
+                                <span class="help-block text-danger">
                                         <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                             @endif

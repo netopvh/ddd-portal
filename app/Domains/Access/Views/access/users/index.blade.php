@@ -18,7 +18,7 @@
                         </ul>
                     </div>
                     <br>
-                    <a href="" class="btn btn-primary btn-raised legitRipple"><i class="icon-database-add"></i>
+                    <a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-raised legitRipple"><i class="icon-database-add"></i>
                         Cadastrar</a>
                 </div>
                 <div class="panel-body">
@@ -62,7 +62,7 @@
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
-                                <td>Kopyov</td>
+                                <td>Administrador</td>
                                 <td>
                                     @if($user->status)
                                         <span class="label label-success">Ativo</span>

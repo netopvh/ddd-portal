@@ -8,12 +8,8 @@
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/css/core.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/css/components.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/css/colors.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/css/custom.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/icoomon.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/css/bundle.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 
 
@@ -75,21 +71,14 @@
 <!-- /page container -->
 
 <!-- Core JS files -->
-<script type="text/javascript" src="{{ asset('backend/js/plugins/loaders/pace.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/core/libraries/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/core/libraries/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/plugins/loaders/blockui.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/core.js') }}"></script>
 <!-- /core JS files -->
 
 <!-- Theme JS files -->
-<script type="text/javascript" src="{{ asset('backend/js/plugins/forms/styling/uniform.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/plugins/ui/moment/moment.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/plugins/ui/nicescroll.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/theme.js') }}"></script>
 @stack('scripts-before')
 
-<script type="text/javascript" src="{{ asset('backend/js/core/app.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/pages/layout_fixed_custom.js') }}"></script>
-<script type="text/javascript" src="{{ asset('backend/js/plugins/ui/ripple.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/bundle-72aef62a47.js') }}"></script>
 @stack('scripts-after')
 <!-- /theme JS files -->
 </body>

@@ -26,9 +26,10 @@
                     <li><a href="#"><i class="icon-cog5"></i> <span>Configurações de conta</span></a></li>
                     <li><a href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                    class="icon-switch2"></i> <span>Sair do sistema</span></a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                          style="display: none;">{{ csrf_field() }}</form>
+                                    class="icon-switch2"></i> <span>Sair do sistema</span></a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                              style="display: none;">{{ csrf_field() }}</form>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -1,26 +1,28 @@
 <?php
 
 // Authentication Routes...
-Route::get('login', 'LoginController@showLoginForm')->middleware('web')->name('login');
-Route::post('login', 'LoginController@login');
-Route::post('logout', 'LoginController@logout')->name('logout');
+$this->get('login', 'LoginController@showLoginForm')->name('login');
+$this->post('login', 'LoginController@login');
+$this->post('logout', 'LoginController@logout')->name('logout');
 
 // Password Reset Routes...
-Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'ResetPasswordController@reset');
+$this->get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+$this->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+$this->get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+$this->post('password/reset', 'ResetPasswordController@reset');
 
-Route::group(['prefix' => 'dashboard'],function (){
-    Route::group(['prefix' => 'users'], function (){
-        Route::get('/','UserController@index')->name('admin.users');
+$this->group(['prefix' => 'dashboard'],function (){
+    $this->group(['prefix' => 'users'], function (){
+        $this->get('/','UserController@index')->name('admin.users');
+        $this->get('/create','UserController@create')->name('admin.users.create');
+        $this->post('/','UserController@store')->name('admin.users.store');
     });
 
-    Route::group(['prefix' => 'roles'], function (){
-        Route::get('/','RoleController@index')->name('admin.roles');
+    $this->group(['prefix' => 'roles'], function (){
+        $this->get('/','RoleController@index')->name('admin.roles');
     });
 
-    Route::group(['prefix' => 'permissions'], function (){
-        Route::get('/','PermissionController@index')->name('admin.permissions');
+    $this->group(['prefix' => 'permissions'], function (){
+        $this->get('/','PermissionController@index')->name('admin.permissions');
     });
 });

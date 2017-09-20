@@ -9,6 +9,11 @@ Breadcrumbs::register('admin.users', function ($breadcrumbs) {
     $breadcrumbs->push('Usuários', route('admin.users'));
 });
 
+Breadcrumbs::register('admin.users.add', function ($breadcrumbs) {
+    $breadcrumbs->parent('admin.users');
+    $breadcrumbs->push('Novo', route('admin.users.create'));
+});
+
 /**
  * Roles
  */

@@ -3,8 +3,11 @@
         <ul class="breadcrumb">
             @foreach ($breadcrumbs as $breadcrumb)
                 @if ($breadcrumb->url && !$loop->last)
-                    <li><a href="{{ $breadcrumb->url }}"><i
-                                    class="icon-home2 position-left"></i> {{ $breadcrumb->title }}</a></li>
+                    <li><a href="{{ $breadcrumb->url }}">
+                            @if($loop->first)
+                                <i class="icon-home2 position-left"></i>
+                            @endif
+                            {{ $breadcrumb->title }}</a></li>
                 @else
                     <li class="active">{{ $breadcrumb->title }}</li>
                 @endif
